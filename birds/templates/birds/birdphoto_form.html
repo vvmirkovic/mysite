@@ -1,0 +1,16 @@
+{% extends "base_home.html" %} 
+
+{% block content %}
+<p><a href="{% url 'birds:bird_photos' %}">Bird Photos</a></p>
+  {% load crispy_forms_tags %}
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <!-- {{ forms.captcha }} -->
+    <!-- <table>
+        {{ form.as_table }}
+    </table> -->
+    <input type="submit" value="Submit">
+    <input type="submit" onclick="window.location='{% url 'birds:bird_main' %}' ; return false;" value="Cancel">
+  </form>
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends "base_home.html" %}
+
+{% block content %}
+<!--This is a filler page. It should eventually be a page for avian related projects.-->
+This page is for avian related projects. It is currently undergoing development. However, you can use the bird photos app, which allows you to upload and view photos of birds.
+<p>
+<a href="{% url 'birds:bird_photos' %}">Bird Photos</a>
+</p>
+{% endblock content %}

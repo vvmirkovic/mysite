@@ -1,33 +1,33 @@
 {% extends "base_home.html" %} 
-
-{% block content %}
-{% if bird_photos %}
+{% block content %} 
+{% if bird_photos %} 
 <a href="{% url 'birds:bird_submit' %}">Bird Submit</a>
-  {% for photo in bird_photos %}
-  <p>
-  <img src="https://mirmir.pythonanywhere.com/{{ photo.photo }}" 
-  alt="Bird photo not found" style="width:auto; height:450px">
-  <!-- alt="Bird photo not found" width="600" height="500"> -->
+  {% for photo in bird_photos %} 
+  <p> 
+  {% load static %}
+  <!-- src="http://vvmirkovic.com/{{ photo.photo }}"-->
+  <!-- src="{% static '' %}{{ photo.photo }}" alt="Bird photo not -->
+  <img src="{{ photo.photo.url }}" alt="Bird photo not 
+  found" style="width:auto; height:450px"> <!-- alt="Bird photo not found" 
+  width="600" height="500"> --> 
   <table>
-    <tr>
-      <th>Bird name:</th>
-      <td>{{ photo.name }}
+    <tr> 
+      <th> Bird name:</th> 
+      <td>{{ photo.name }} 
     </tr>
-    <tr>
-      <th>Bird location:</th>
+    <tr> 
+      <th>Bird location:</th> 
       <td>{{ photo.location }}
-    </tr>
-    <tr>
-      <th>Bird notes:</th>
-      <td>{{ photo.notes }}
-    </tr>
-  </table>
-  </p>
-  {% endfor %}
+    </tr> 
+    <tr> 
+      <th>Bird notes:</th> 
+      <td>{{ photo.notes }} 
+    </tr> 
+  </table> 
+  </p> {% endfor %}
 {% else %}
 No bird photos have been submitted! You can submit one here:
-<p>
-<a href="{% url 'birds:bird_submit' %}">Bird Submit</a>
+<p> <a href="{% url 'birds:bird_submit' %}">Bird Submit</a>
 </p>
 {% endif %}
 {% endblock content %}

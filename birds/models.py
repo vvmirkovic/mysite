@@ -6,6 +6,7 @@ class BirdPhoto(models.Model):
     location = models.CharField(max_length=255)
     notes = models.CharField(max_length=255)
     photo = models.ImageField(upload_to='birds/photos/')
+    #photo = models.ImageField(upload_to='birds/photos/')
     #photo = models.ImageField(upload_to='birds/photos/', null=True, blank=True)
 
     def __str__(self):

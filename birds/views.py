@@ -37,11 +37,13 @@ class BirdPhotoSubmit(CreateView):
         form = BirdCaptchaForm(request.POST, request.FILES)
 
         if form.is_valid():
+            #import getpass
+            #return HttpResponse(getpass.getuser())
             form.save()
+            return redirect(reverse_lazy('birds:bird_photos'))
         else:
             return HttpResponse(form.errors.__str__)
 
-        return redirect(reverse_lazy('birds:bird_photos'))
 
 
 

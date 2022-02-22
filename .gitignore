@@ -1,0 +1,12 @@
+*/__pycache__/*
+start.sh
+cert.sh
+letsencrypt
+letsencrypt/*
+auth-hook.sh
+birds/photos.moved*
+conf*
+requirements.txt.backup
+birds/templates/birds/birdphoto_list.html.backup
+mysite/wsgi.py_backup
+db.sqlite3

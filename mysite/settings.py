@@ -24,9 +24,11 @@ APP_NAME = 'Vladimir Mirkovic'
 SECRET_KEY = 'django-insecure-if-k&07_5m7)9w3+a1ix!wb_r1n4v@gnm!%rm24yy+0)3eq&@c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['34.226.176.210','vvmirkovic.com','.vvmirkovic.com']
+#ALLOWED_HOSTS = ['107.23.195.195']
+#ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,6 +87,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': '/db.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -125,13 +128,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-STATIC_URL = '/static/'
+STATIC_URL = 'https://vvmirkovic.com/static/'
+STATIC_ROOT = '/var/www/vvmirkovic.com/static/'
 
 # Media files for user uploads
-
-MEDIA_ROOT = '/home/mirmir/django_projects/mysite/'
-MEDIA_URL = '/'
+MEDIA_URL = 'https://vvmirkovic.com/media/'
+MEDIA_ROOT = '/var/www/vvmirkovic.com/media/'
+#MEDIA_ROOT = '/opt/bitnami/projects/mysite/'
+#MEDIA_ROOT = '/home/mirmir/django_projects/mysite/'
+#MEDIA_URL = 'https://vvmirkovic.com/birds/photos/'
 #MEDIA_URL = 'https://mirmir.pythonanywhere.com/'
 
 # Default primary key field type
